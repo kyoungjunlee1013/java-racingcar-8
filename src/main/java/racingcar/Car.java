@@ -10,4 +10,13 @@ public class Car {
         this.name = name;
     }
 
+    public void move() {
+    }
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }

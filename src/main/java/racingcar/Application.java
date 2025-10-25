@@ -60,4 +60,17 @@ public class Application {
         }
         return count;
     }
+
+    private static void runRacing(List<Car> cars, int attemptCount){
+        System.out.println("\n실행 결과");
+
+        for(int i = 0; i < attemptCount; i++){
+            MoveCars(cars);
+        }
+    }
+    private static void MoveCars(List<Car> cars){
+        for(Car car : cars){
+            car.move();
+        }
+    }
 }
