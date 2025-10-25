@@ -7,7 +7,11 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        run();
+        try{
+            run();
+        }catch (IllegalArgumentException e){
+            System.out.println("[ERROR] " + e.getMessage());
+        }
     }
     public static void run(){
         List<Car> cars = setupCars();
