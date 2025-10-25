@@ -66,11 +66,24 @@ public class Application {
 
         for(int i = 0; i < attemptCount; i++){
             MoveCars(cars);
+            printCurrentPositions(cars);
         }
     }
     private static void MoveCars(List<Car> cars){
         for(Car car : cars){
             car.move();
         }
+    }
+    private static void printCurrentPositions(List<Car> cars){
+        for(Car car : cars){
+            System.out.println(car.getName() + " : " + convertPositionToHyphens(car.getPosition()));
+        }
+    }
+    private static String convertPositionToHyphens(int position) {
+        StringBuilder hyphens = new StringBuilder();
+        for (int i = 0; i < position; i++) {
+            hyphens.append("-");
+        }
+        return hyphens.toString();
     }
 }
