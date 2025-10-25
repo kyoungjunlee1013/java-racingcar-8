@@ -11,8 +11,6 @@ public class Application {
     }
     public static void run(){
         List<Car> cars = setupCars();
-
-
     }
     private static List<Car> setupCars() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
@@ -30,11 +28,10 @@ public class Application {
 
         return cars;
     }
-    private static String validateCarName(String name){
+    private static void validateCarName(String name){
         if(name.isEmpty() || name.length() >5){
             throw new IllegalArgumentException("자동차 이름은 1자 이상 5자 이하만 가능합니다.");
         }
-
-        return name;
     }
+
 }
