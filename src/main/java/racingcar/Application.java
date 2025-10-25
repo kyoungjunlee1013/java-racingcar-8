@@ -41,8 +41,19 @@ public class Application {
         System.out.println("시도할 횟수는 몇 회인가요?");
         String input = Console.readLine();
 
-        return 0; //임의로 리턴값을 0으로 지정한다.
+      return parseAndValidateAttemptCount(input);
     }
 
-
+    private static int parseAndValidateAttemptCount(String input){
+        int count;
+        try{
+            count = Integer.parseInt(input);
+        }catch (NumberFormatException e){
+            throw new IllegalArgumentException("시도 횟수는 숫자만 입력 가능합니다.");
+        }
+        if(count <=0) {
+            throw new IllegalArgumentException("시도 횟수는 1 이상이어야 합니다.");
+        }
+        return count;
+    }
 }
