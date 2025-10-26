@@ -1,6 +1,7 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Console;
+import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,8 @@ public class Application {
 
     private static void MoveCars(List<Car> cars) {
         for (Car car : cars) {
-            car.move();
+            int randomNumber = Randoms.pickNumberInRange(0, 9);
+            car.move(randomNumber);
         }
     }
 
