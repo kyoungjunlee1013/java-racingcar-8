@@ -7,12 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws IllegalArgumentException{
             run();
-        } catch (IllegalArgumentException e) {
-            System.out.println("[ERROR] " + e.getMessage());
-        }
     }
 
     public static void run() {
